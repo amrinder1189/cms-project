@@ -71,7 +71,7 @@
                                         echo "<td>{$post_date}</td>";
                                         echo "<td>{$post_content}</td>";
                                         echo "<td><a href='upload_post.php?source={$post_id}'>Edit</a></td>";
-                                        echo "<td><a href=''>Delete</a></td>";
+                                        echo "<td><a href='delete_post.php?delete={$post_id}'>Delete</a></td>";
 
                                         echo "</tr>";
                                         

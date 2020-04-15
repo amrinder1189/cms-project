@@ -17,15 +17,29 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             WelCome To Admin
-
-
-
-                            <small><?php echo $_SESSION['username'];  ?></small>
+                            <small>Author</small>
                         </h1>
                        
                     </div>
                 </div>
                 <!-- /.row -->
+
+                <?php
+
+                if (isset($_GET['delete'])) {
+                    
+                    $delete_id=$_GET['delete'];
+
+
+                    $query="DELETE FROM posts WHERE post_id = '$delete_id'";
+                    $delete_query=mysqli_query($conn,$query);
+
+                }
+
+                ?>
+
+
+
 
             </div>
             <!-- /.container-fluid -->

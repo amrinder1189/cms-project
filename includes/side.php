@@ -18,8 +18,27 @@
                                 <span class="glyphicon glyphicon-search"></span>
                         </button>
                         </span>
+                    </div></form><br>
+
+
+<!-- LOgin system  -->
+                    <form class="form" method="post" action="login.php">
+                    <div class="form-group">
+                        <label for="username">Email</label>
+                        <input type="text" name="username" class="form-control">
                     </div>
-                </form>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" name="password" class="form-control">
+                    </div>
+                     <div class="form-group">
+                        <input type="submit" name="login" value="login" class="form-control btn btn-warning">
+                    </div>
+                    </form>
+
+
+
+
                     <!-- /.input-group -->
                 </div>
 
