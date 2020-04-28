@@ -9,14 +9,46 @@
 
     <!-- Page Content -->
     <div class="container"> 
+		
+				<?php
+				if(isset($_GET['page'])){
+				$page=$_GET['page'];
+				}
+				else{
+				$page="";	
+				}
+
+    				if($page=="" || $page== 1){
+				    $page_1=0;
+				}else{
+				    $page_1=($page * 3)-3;
+				}
+				 
+                
+			
+
+
+
+
+
+	
+	?>
 
         <div class="row">
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <?php
-
-                $query="SELECT * FROM posts";
+	
+				$query="SELECT * FROM posts";
+				$select_posts_count=mysqli_query($conn,$query);
+			    $count= mysqli_num_rows($select_posts_count);
+				
+				$count=ceil($count/3);
+				
+		
+	
+                $query="SELECT * FROM posts LIMIT $page_1,3";
                 $select_all_posts=mysqli_query($conn,$query);
 
                 while ($row= mysqli_fetch_assoc($select_all_posts)) {
@@ -82,6 +114,30 @@
         <!-- /.row -->
 
         <hr>
+		<ul class="pager">
+			<?php
+	
+			for($i=1 ; $i<=$count ; $i++ ){
+			    
+			    if($i==$page){
+				  echo "<li><a class='active_link' href='index.php?page={$i}'>$i</a></li>";	
+			    }
+			    else{
+				  echo "<li><a href='index.php?page={$i}'>$i</a></li>";	
+			    }
+								 
+			
+								 
+ }
+			
+
+			?>
+			
+		</ul>
 
         <!-- Footer -->
       <?php include"includes/footer.php" ?>
+		
+		
+		
+		

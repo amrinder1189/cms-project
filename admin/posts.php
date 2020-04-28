@@ -1,3 +1,4 @@
+<!--'SourceCodePro-Medium', ＭＳ ゴシック, 'MS Gothic', monospace-->
 <?php include"includes/admin_header.php" ?>
     <div id="wrapper">
 
