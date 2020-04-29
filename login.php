@@ -6,7 +6,7 @@ if (isset($_POST['login'])) {
 	$username=$_POST['username'];
 	$password=$_POST['password'];
 
-	$query="SELECT * FROM users";
+	$query="SELECT * FROM users WHERE user_email = '{$username}'";
 	$users_login=mysqli_query($conn,$query);
 
 	while ($row = mysqli_fetch_assoc($users_login)) {
@@ -22,7 +22,8 @@ if ($username !== $user_email && $password !== $user_pass) {
 	
 	header("Location: index.php");
 
-}elseif ($username == $user_email && $password == $user_pass) {
+}
+elseif ($username == $user_email && $password == $user_pass) {
 
 $_SESSION['userid']  = $user_id;
 $_SESSION['username'] = $user_name;
